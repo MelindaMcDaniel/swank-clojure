@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>kreg/swank-clojure @ GitHub</title>
+	
+	<style type="text/css">
+		body {
+  		margin-top: 1.0em;
+  		background-color: #7253fa;
+		  font-family: "helvetica"; 
+  		color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+		h1 { font-size: 3.8em; color: #8dac05; margin-bottom: 3px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { font-size: 1.5em; color: #8dac05; }
+    h3 { text-align: center; color: #8dac05; }
+    a { color: #8dac05; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+		pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+	</style>
+	
+</head>
+
+<body>
+  <a href="http://github.com/kreg/swank-clojure"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/kreg/swank-clojure/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/kreg/swank-clojure/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+      
+    <h1><a href="http://github.com/kreg/swank-clojure">swank-clojure</a> 
+      <span class="small">by <a href="http://github.com/kreg">kreg</a></small></h1>
+
+    <div class="description">
+      Swank/slime support for clojure
+    </div>
+
+    <p>This fork of Jeffrey Chu's swank-clojure includes the following new features:
+
+1. AOT compile swank-clojure into a jar file.
+
+2. Can now stop and start the server more reliably outside of
+   emacs. The purpose is to allow swank-clojure to be incorporated
+   into Clojure server apps that can stop and start swank. If using
+   this feature, connect from emacs using "M-x slime-connect" instead
+   of "M-x slime" to interact with the running app. Disconnect with
+   "M-x slime-disconnect" or from the REPL, hit comma followed by
+   "disconnect". Disconnecting rather than quitting leaves the app
+   running.
+
+   Your app can start the swank server something like:
+
+       (swank.swank/ignore-protocol-version "2009-01-01")
+       (clojure.main/with-bindings
+         (swank.swank/start-server "/dev/null" :encoding "iso-latin-1-unix"
+                                   :port 7000))
+
+   Your app can stop the swank server using:
+
+       (swank.swank/stop-server)
+
+3. A stand-alone swank server is included in standalone.clj. It may be
+   useful as a long-running REPL that different instances of emacs
+   connect to. Run using:
+
+       java -cp /path/to/clojure.jar:/path/to/swank-clojure.jar swank.standalone ARGS
+</p><h2>Authors</h2>
+<p>Drew Raines (aaraines@gmail.com)<br/>Craig McDaniel (craigmcd@gmail.com)<br/>Cosmin Stejerean (cstejerean@gmail.com)<br/>Josip Gracin (jgracin@inge-mark.hr)<br/>Jeffrey Chu (jochu0@gmail.com)<br/>Mark Triggs (mark@dishevelled.net)<br/>Mike Hinchey (mike@streamfocus.com)<br/>Matt Revelle (mrevelle@gmail.com)<br/>Kiprianas Spiridonovas (neegzistuoju@gmail.com)<br/>Wilkes Joiner (wilkesjoiner@gmail.com)<br/><br/>      </p>
+<h2>Contact</h2>
+<p>Craig McDaniel (craigmcd@gmail.com)<br/>      </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/kreg/swank-clojure/zipball/master">zip</a> or
+      <a href="http://github.com/kreg/swank-clojure/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/kreg/swank-clojure</pre>
+    </p>
+      
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/kreg/swank-clojure">kreg/swank-clojure</a>
+    </div>
+    
+  </div>
+
+  
+</body>
+</html>
