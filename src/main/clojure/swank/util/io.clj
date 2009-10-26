@@ -29,10 +29,10 @@
                         (flushf (.. me getBuffer (substring 0 len)))
                         (.. me getBuffer (delete 0 len))))))]
        (dothread
-        (thread-set-name "Call-on-write Stream")
-        (continuously
-         (Thread/sleep 200)
-         (when-not @closed?
-           (.flush stream))))
+         (thread-set-name "Call-on-write Stream")
+         (continuously
+           (Thread/sleep 200)
+           (when-not @closed?
+             (.flush stream))))
        stream))
   {:tag StringWriter})
